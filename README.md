@@ -1,8 +1,6 @@
 # DoggyWyvernRecreation
 A recreation of Pixel's unreleased game
 
----
-
 ![Screenshot](screenshot.png)
 
 ## For Building

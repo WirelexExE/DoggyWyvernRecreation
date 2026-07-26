@@ -1,4 +1,4 @@
-# DoggyWyvernRecreation
+# Doggy Wyvern Recreation
 A recreation of Pixel's unreleased game
 
 ![Screenshot](screenshot.png)
@@ -9,7 +9,7 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThre
 ```
 
 ## Progress
-- [ ] All stages exported as files instead of being hardcoded in
+- [ ] Export all stages as files (currently hardcoded)
 - [ ] Stage 1 Intro Sequence
 - [x] Stage 1 Layout (missing only a few things)
 - [ ] Stage 1 Sequence
@@ -17,13 +17,14 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThre
 - [ ] Stage 2 Sequence
 - [ ] Stage 2 Boss (Graphics/Function)
 - [ ] Rest of the sounds
+- [ ] Fix the flash during the "Clear!" screen
 - [ ] Fix Doggy Ears/Tail
 - [ ] Fix "Stage X Start!" animation
 - [ ] Rewriting the framework to use legacy directdraw code using the 8-bit palette
 
 ## Credits
 * Pixel and other colleagues (the original game + assets)
-* CSE2/Piyopiyo Decomp (snippits from the original framework)
+* CSE2/Ikachan/Piyopiyo Decomp (snippits from the original framework)
 * AsperD (graphic recreations)
 * motorola68000 (graphic recreations)
 * RootLM (upcoming Stage 1 theme)
@@ -32,5 +33,5 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThre
 
 ## Licensing
 
-Few snippits of CSE2/Piyopiyo decomp code and the recreated assets in this project are proprietary
+Few snippits of CSE2/Ikachan/Piyopiyo decomp code and the assets in this project are proprietary
 and belongs to Daisuke "Pixel" Amaya.

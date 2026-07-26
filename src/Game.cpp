@@ -8,6 +8,8 @@
 #include <math.h>
 #include <stdio.h>
 
+// TODO: most things here need to be seperated
+
 DWORD gKeyTrg;
 
 char mode = GAMEMODE_TITLE;
@@ -409,7 +411,7 @@ void PutPreStatus()
 		PutBitmap3(&grcFull, 344, 100, &rcGlyph, SURFACE_ID_GAMESTATUS);
 	}
 
-	// TODO: animate this
+	// TODO: fixing this
 	{
 		RECT rcGlyph = { 0, 0, 16, 32 };
 		rcGlyph.left += 16 * (map.stage + 2);
@@ -482,43 +484,43 @@ enum StageTriggerEvents
 	TE_LOOP,
 };
 // Stage 1
-//StageTriggerData stagetriggerdat[] = {
-//	{1597,TE_BIRD_A},
-//	{1637,TE_BIRD_A},
-//	{1637 + 40,TE_BIRD_A},
-//	{1637 + (40 * 2),TE_BIRD_A},
-//	{1637 + (40 * 3),TE_BIRD_A},
-//	{1637 + (40 * 4),TE_BIRD_A},
-//	{1637 + (40 * 5),TE_BIRD_A},
-//	{1637 + (40 * 6),TE_BIRD_A},
-//	{1637 + (40 * 7),TE_BIRD_A},
-//	{6302,TE_MOVE_OBJECTS_A},
-//	{6526,TE_BUG_A},
-//	{6526 + 40,TE_BUG_A},
-//	{6526 + (40 * 2),TE_BUG_A},
-//	{6526 + (40 * 3),TE_BUG_A},
-//	{6526 + (40 * 4),TE_BUG_A},
-//	{6526 + (40 * 5),TE_BUG_A},
-//	{6526 + (40 * 6),TE_BUG_A},
-//	{6526 + (40 * 7),TE_BUG_A},
-//	{8495,TE_BUG_B},
-//	{8495 + 40,TE_BUG_B},
-//	{8495 + (40 * 2),TE_BUG_B},
-//	{8495 + (40 * 3),TE_BUG_B},
-//	{8495 + (40 * 4),TE_BUG_B},
-//	{8495 + (40 * 5),TE_BUG_B},
-//	{8495 + (40 * 6),TE_BUG_B},
-//	{8495 + (40 * 7),TE_BUG_B},
-//	{10013,TE_BUG_STRAIGHT},
-//	{10225,TE_BIRD_SPAM},
-//	{11989,TE_END},
-//};
+StageTriggerData stagetriggerdat[] = {
+	{1597,TE_BIRD_A},
+	{1637,TE_BIRD_A},
+	{1637 + 40,TE_BIRD_A},
+	{1637 + (40 * 2),TE_BIRD_A},
+	{1637 + (40 * 3),TE_BIRD_A},
+	{1637 + (40 * 4),TE_BIRD_A},
+	{1637 + (40 * 5),TE_BIRD_A},
+	{1637 + (40 * 6),TE_BIRD_A},
+	{1637 + (40 * 7),TE_BIRD_A},
+	{6302,TE_MOVE_OBJECTS_A},
+	{6526,TE_BUG_A},
+	{6526 + 40,TE_BUG_A},
+	{6526 + (40 * 2),TE_BUG_A},
+	{6526 + (40 * 3),TE_BUG_A},
+	{6526 + (40 * 4),TE_BUG_A},
+	{6526 + (40 * 5),TE_BUG_A},
+	{6526 + (40 * 6),TE_BUG_A},
+	{6526 + (40 * 7),TE_BUG_A},
+	{8495,TE_BUG_B},
+	{8495 + 40,TE_BUG_B},
+	{8495 + (40 * 2),TE_BUG_B},
+	{8495 + (40 * 3),TE_BUG_B},
+	{8495 + (40 * 4),TE_BUG_B},
+	{8495 + (40 * 5),TE_BUG_B},
+	{8495 + (40 * 6),TE_BUG_B},
+	{8495 + (40 * 7),TE_BUG_B},
+	{10013,TE_BUG_STRAIGHT},
+	{10225,TE_BIRD_SPAM},
+	{11989,TE_END},
+};
 
 //Stage 2
-StageTriggerData stagetriggerdat[] = {
-	{1411,TE_MOVE2_OBJECTS_A},
-	{9655,TE_LOOP},
-};
+//StageTriggerData stagetriggerdat[] = {
+//	{1411,TE_MOVE2_OBJECTS_A},
+//	{9655,TE_LOOP},
+//};
 
 void PushTaggedObjects(int tag, int xm, int ym)
 {
@@ -614,7 +616,6 @@ struct StageData
 
 // TODO: make this a binary file
 // Stage 1
-/*
 StageData stagedat[] = {
 	{OBJ_DIAMOND,657,481,0},
 	{OBJ_DIAMONDSUPER,677,441,0},
@@ -778,9 +779,10 @@ StageData stagedat[] = {
 	{ OBJ_DIAMOND,11976,355,0 },
 	{ OBJ_DIAMOND,11975,455,0 },
 	{ OBJ_DIAMOND,12001,405,0 },
-};*/
+};
 
 // Stage 2
+/*
 StageData stagedat[] = {
 	{OBJ_SPIKE,907,180,0},
 	{OBJ_ROCK,967,239,0},
@@ -829,7 +831,7 @@ StageData stagedat[] = {
 	{OBJ_DIAMOND,1888,389,0},
 	{OBJ_DIAMOND,1961,389,0},
 	{OBJ_DIAMOND,2024,389,0},
-};
+};*/
 
 void ReloadStage(bool OnHurt)
 {
@@ -843,7 +845,7 @@ void ReloadStage(bool OnHurt)
 	// TODO: clean this
 	frame.x = 0;
 	frame.y = doggy.y - (SURFACE_HEIGHT << 9);
-	map.height = 768; //780;
+	map.height = 768;
 	map.progress = 0;
 	map.nexttrigger = 0;
 
@@ -868,7 +870,7 @@ BOOL Game(HWND hWnd)
 
 	InitFade();
 	InitDoggy();
-	map.stage = 2; // TODO
+	map.stage = 1;
 	ReloadStage(false);
 	SetFade(FADEMODE_FADEOUT);
 	StageTxtReset();

@@ -79,7 +79,7 @@ fail:
 
 void LoadGenericData()
 {
-	//Load surfaces
+	// Load surfaces
 	MakeSurface_File("DogPrev.bmp", SURFACE_ID_TITLE);
 	MakeSurface_Resource("GAMEINTERFACE", SURFACE_ID_GAMEINTERFACE);
 	MakeSurface_Resource("GAMESTATUS", SURFACE_ID_GAMESTATUS);
@@ -91,7 +91,8 @@ void LoadGenericData()
 	MakeSurface_File("Enemy2.bmp", SURFACE_ID_ENEMY2);
 	MakeSurface_File("EffectBubble.bmp", SURFACE_ID_BUBBLES);
 
-	//Background
+	// Background
+	// TODO: make this not look ugly af
 	MakeSurface_File("Back1_1.bmp", SURFACE_ID_BACK0);
 	MakeSurface_File("Back1_2.bmp", SURFACE_ID_BACK1);
 	MakeSurface_File("Back1_3.bmp", SURFACE_ID_BACK2);
@@ -114,27 +115,5 @@ void LoadGenericData()
 	InitSoundObject("HIT", SOUND_ID_HIT);
 	InitSoundObject("GRADEUP", SOUND_ID_GRADEUP);
 	
-
 	LoadSoundObject("MusTitle.wav", SOUND_ID_MUS_TITLE);
-
-	//LoadSoundObject("MusStage1A.wav", SOUND_ID_MUS_STAGEA);
-	//LoadSoundObject("MusStage1B.wav", SOUND_ID_MUS_STAGEB);
-
-    //MakeSurface_Generic(SURFACE_WIDTH, SURFACE_HEIGHT, SURFACE_ID_BACKUP);
-	
-
-	//Make generic surfaces
-	//MakeSurface_Generic(SURFACE_WIDTH, SURFACE_HEIGHT, SURFACE_ID_BACKUP);
-	//MakeSurface_Generic(272, 16, SURFACE_ID_TEXT0);
-	//MakeSurface_Generic(272, 16, SURFACE_ID_TEXT1);
-	//for (int i = 0; i < MAX_PSLINES; i++)
-	//	MakeSurface_Generic(SURFACE_WIDTH, 16, i + SURFACE_ID_WORDS0);
-
-	//Load sounds
-	//InitSoundObject("NODMG", SOUND_ID_NODMG);
-	//InitSoundObject("QUAKE", SOUND_ID_QUAKE);
-	//InitSoundObject("BOSSOUCH", SOUND_ID_BOSSOUCH);
-	//ChangeSoundFrequency(SOUND_ID_NODMG, 1200);
-	//ChangeSoundFrequency(SOUND_ID_QUAKE, 700);
-	//ChangeSoundFrequency(SOUND_ID_BOSSOUCH, 1200);
 }

@@ -64,11 +64,12 @@ void ObjectBird(Object* obj)
 		{ 0, 0, 64, 64 },
 		{64, 0, 128, 64},
 		// Flying
-		{0, 64, 64, 128},
-		{64, 64, 128, 128},
-		{128, 64, 192, 128},
-		{192, 64, 256, 128},
-		{256, 64, 320, 128},
+		{0, 64, 64, 128}, // 1
+		{192, 64, 256, 128}, // 4
+		{256, 64, 320, 128}, // 5
+		{192, 64, 256, 128}, // 4
+		{128, 64, 192, 128}, // 3 
+		{64, 64, 128, 128}, // 2
 	};
 
 	if (obj->xm > 4 * THAT_FULLPIXEL)
@@ -101,16 +102,17 @@ void ObjectBird(Object* obj)
 
 	}else {
 		// Flying
-		if (++obj->ani_wait > 3) {
+		if (++obj->ani_wait > 2) {
 			obj->ani_wait = 0;
 			
+			if (obj->ani_no >= 2 && obj->ani_no < 8)
+				obj->ani_no++;
+
 			if (obj->ani_no >= 0 && obj->ani_no < 2)
 				obj->ani_no = 2;
 
-			if (obj->ani_no == 6)
+			if (obj->ani_no == 8)
 				obj->ani_no = 2;
-			if (obj->ani_no >= 2 && obj->ani_no < 6)
-				obj->ani_no++;
 		}
 
 		if (obj->act_no == 1) {

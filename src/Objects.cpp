@@ -85,7 +85,7 @@ void ObjectBird(Object* obj)
 
 	if (obj->act_no == 0) {
 		// Sit
-		if (++obj->ani_wait > 2) {
+		if (++obj->ani_wait > 1) {
 			obj->ani_wait = 0;
 			obj->ani_no++;
 			obj->ani_no %= 2;

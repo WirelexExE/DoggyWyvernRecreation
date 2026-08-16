@@ -145,20 +145,62 @@ void PutDoggy(Frame* frame)
 		{320, 128, 384, 192},// Run 6
 	};
 	RECT rcDoggyEars[] = {
-		{0, 320, 64, 384}, // Normal
-		{64, 320, 128, 384},
-		{128, 320, 192, 384},
-		{0, 384, 64, 448}, // Up
-		{64, 384, 128, 448},
-		{128, 384, 192, 448},
-		{0, 448, 64, 512}, // Down
-		{64, 448, 128, 512},
-		{128, 448, 192, 512},
+		{48, 192, 80, 208}, // Normal
+		{48, 208, 80, 224},
+		{48, 224, 80, 240},
+		{0, 192, 32, 208}, // Up
+		{0, 208, 32, 224},
+		{0, 224, 32, 240},
+		{96, 192, 128, 208}, // Down
+		{96, 208, 128, 224},
+		{96, 224, 128, 240},
+	};
+	RECT rcDoggyTail[] = {
+		{80, 192, 96, 208}, // Normal
+		{80, 208, 96, 224},
+		{80, 224, 96, 240},
+		{32, 192, 48, 208}, // Up
+		{32, 208, 48, 224},
+		{32, 224, 48, 240},
+		{128, 192, 144, 208}, // Down
+		{128, 208, 144, 224},
+		{128, 224, 144, 240},
 	};
 
-	PutBitmap3(&grcFull, ((doggy.x - ((32+8) * THAT_FULLPIXEL)) / THAT_FULLPIXEL) - (frame->x / THAT_FULLPIXEL),
-		((doggy.y - (32 * THAT_FULLPIXEL)) / THAT_FULLPIXEL) - (frame->y / THAT_FULLPIXEL),
+	// TODO: adjust all frames
+	// Left Top (Tail) Right Bottom (Ears)
+	RECT rcDoggyTailEarsOfs[] = {
+		{ 34, 7, 13, 28}, // Normal
+		{ 34, 7, 13, 28}, // Flap 1
+		{ 34, 7, 13, 28}, // 2
+		{ 34, 7, 13, 28}, // 3
+		{ 34, 7, 13, 28}, // 4
+		{ 34, 7, 13, 28}, // 5
+		{ 34, 7, 13, 28}, // 6
+		{ 34, 7, 13, 28}, // Pre-Glide
+		{ 34, 7, 13, 28}, // Glide
+		{ 34, 7, 13, 28}, // Glide-End
+		{ 25, -2, 16, 32}, // Throw 1
+		{ 25, -2, 16, 32}, // Throw 2
+		{ 25, -2, 16, 32}, // Throw 3
+		{ 25, -2, 16, 32}, // Throw 4
+		{ 34, 7, 13, 28}, // Throw 5
+		{ 34, 7, 13, 28}, // Hurt
+		{ 34, 7, 13, 28}, // Run 1
+		{ 34, 7, 13, 28}, // 2
+		{ 34, 7, 13, 28}, // 3
+		{ 34, 7, 13, 28}, // 4
+		{ 34, 7, 13, 28}, // 5
+		{ 34, 7, 13, 28}, // 6
+	};
+
+	PutBitmap3(&grcFull, ((doggy.x - (rcDoggyTailEarsOfs[doggy.ani_no].right * THAT_FULLPIXEL)) / THAT_FULLPIXEL) - (frame->x / THAT_FULLPIXEL),
+		((doggy.y - (rcDoggyTailEarsOfs[doggy.ani_no].bottom * THAT_FULLPIXEL)) / THAT_FULLPIXEL) - (frame->y / THAT_FULLPIXEL),
 		&rcDoggyEars[doggy.ani_detail], SURFACE_ID_DOGGY);
+
+	PutBitmap3(&grcFull, ((doggy.x - (rcDoggyTailEarsOfs[doggy.ani_no].left * THAT_FULLPIXEL)) / THAT_FULLPIXEL) - (frame->x / THAT_FULLPIXEL),
+		((doggy.y - (rcDoggyTailEarsOfs[doggy.ani_no].top * THAT_FULLPIXEL)) / THAT_FULLPIXEL) - (frame->y / THAT_FULLPIXEL),
+		&rcDoggyTail[doggy.ani_detail], SURFACE_ID_DOGGY);
 
 	PutBitmap3(&grcFull, ((doggy.x - (32 * THAT_FULLPIXEL)) / THAT_FULLPIXEL) - (frame->x / THAT_FULLPIXEL),
 		((doggy.y - (32 * THAT_FULLPIXEL)) / THAT_FULLPIXEL) - (frame->y / THAT_FULLPIXEL),

@@ -9,7 +9,7 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThre
 ```
 
 ## Progress
-- [ ] Export all stages as files (currently hardcoded)
+- [x] Export stages as files
 - [ ] Stage 1 Intro Sequence
 - [x] Stage 1 Layout (missing only a few things)
 - [ ] Stage 1 Sequence

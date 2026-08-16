@@ -33,6 +33,8 @@ struct Map {
 	int stage;
 	Object objects[MAXOBJECTS];
 	Object carets[MAXOBJECTS];
+	int maxobjects = 0;
+	int maxtriggers = 0;
 };
 
 struct Frame {

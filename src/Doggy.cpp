@@ -646,7 +646,6 @@ void HitDoggy()
 
 	// Edge of the Screen
 	if (doggy.x < map.progress + (32 * THAT_FULLPIXEL)) {
-		HurtDoggy();
 		doggy.xm = THAT_FULLPIXEL;
 		doggy.x = map.progress + (32 * THAT_FULLPIXEL);
 	}
